@@ -1,0 +1,99 @@
+@import 'resets';
+$round-border: 50%;
+
+.people {
+  display: flex;
+  flex-wrap: wrap;
+  width: 910px;
+  margin: 30px auto;
+
+  img {
+  width: 200px;
+  height: 200px;
+  border-radius: $round-border;
+  transition: border-radius 1s;
+  }
+
+  .person {
+    margin-bottom: -12px;
+    padding: 10px 10px 16px;
+    transition: transform 1s;
+
+    &:hover {
+      background: #eee;
+      border-radius: 10px;
+      transform: scale(1.2);
+      z-index: 2;
+
+      img {
+        border-radius: 60px;
+      }
+
+      .extra {
+        visibility: visible;
+      }
+    }
+  }
+
+  .person:nth-child(1),
+  .person:nth-child(2),
+  .person:nth-child(3),
+  .person:nth-child(5),
+  .person:nth-child(6),
+  .person:nth-child(7),
+  .person:nth-child(9) {
+    margin-right: 10px;
+  }
+
+  .photo {
+    position: relative;
+  }
+
+  .rank {
+    display: block;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    background: #fff;
+    border-radius: $round-border;
+    position: absolute;
+    top: calc(50% - 16px);
+    right: 10px;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    color: #8b0000;
+  }
+
+  .name {
+    line-height: 23px;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    color: #2f4f4f;
+  }
+
+  .extra {
+    visibility: hidden;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+  }  
+}
+
+@media screen and (max-width: 991px) {
+  .people {
+    width: 450px;
+    justify-content: space-between;
+
+    .person:nth-child(1),
+    .person:nth-child(2),
+    .person:nth-child(3),
+    .person:nth-child(5),
+    .person:nth-child(6),
+    .person:nth-child(7),
+    .person:nth-child(9) {
+      margin-right: 0;
+    }
+  } 
+}
